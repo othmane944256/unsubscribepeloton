@@ -2,17 +2,71 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <title>Aanbieding</title>
+  <title>Uitschrijven</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 40px;
+      text-align: center;
+    }
+    .box {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+    input[type="email"] {
+      padding: 10px;
+      width: 250px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
 </head>
-<body style="margin:0;padding:0;background:#fff;">
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-    <tr>
-      <td align="center">
-        <a href="https://kzmii98je40j3b1xdcmu.lite.vusercontent.net/" target="_blank">
-          <img src="https://via.placeholder.com/600x400.png?text=Klik+Hier+Voor+Aanbieding" width="600" height="400" alt="Klik hier" style="display:block;border:0;">
-        </a>
-      </td>
-    </tr>
-  </table>
+<body>
+  <div class="box">
+    <h2>Afmelden van nieuwsbrief</h2>
+    <p>Vul je e-mailadres in om je af te melden:</p>
+    <input type="email" id="email" placeholder="jouw@email.nl" required />
+    <br>
+    <button onclick="unsubscribe()">Afmelden</button>
+    <p id="status"></p>
+  </div>
+
+  <script>
+    function unsubscribe() {
+      const email = document.getElementById('email').value.trim();
+      const status = document.getElementById('status');
+
+      if (!email || !email.includes('@')) {
+        status.innerText = 'Voer een geldig e-mailadres in.';
+        return;
+      }
+
+      fetch("https://script.google.com/macros/s/AKfycbxujH6NidUcbuW3pgTyos8d6E6m34QuUaEX1fpNRgEJauh1OC4TjuK33ezs573mvJ5O/exec", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email })
+      })
+      .then(res => {
+        if (res.ok) {
+          status.innerText = 'Je bent succesvol afgemeld.';
+        } else {
+          status.innerText = 'Er is een probleem opgetreden. Probeer het later opnieuw.';
+        }
+      })
+      .catch(() => {
+        status.innerText = 'Er kon geen verbinding worden gemaakt met de server.';
+      });
+    }
+  </script>
 </body>
 </html>
